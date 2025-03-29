@@ -135,7 +135,7 @@ def train_model_oncifar100(model):  
 
 if __name__ == '__main__':
 
-    ckpt = "/T8/DXH_learning/model.safetensors"
+    ckpt = "model.safetensors"
     model = timm.create_model('vit_base_patch16_224', pretrained=False)
     model.load_state_dict(load_file(ckpt))
     model.head=nn.Linear(model.embed_dim,100)
