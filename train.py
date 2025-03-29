@@ -56,7 +56,7 @@ class CustomCIFAR100(Dataset):
 
 
 def train_model_oncifar100(model):  
-# 定义超参数  
+    # hyper  
     batch_size = 128  
     num_epochs = 60
     modelarch='ViTb16cifar100'
@@ -83,7 +83,7 @@ def train_model_oncifar100(model):  
     accs=[]
     accs.append(0)
 
-    # 训练模型  
+    # train  
     for epoch in range(num_epochs):  
         model.train()  
         running_loss = 0.0  
@@ -101,7 +101,7 @@ def train_model_oncifar100(model):  
             if i % 100 == 0:  
                 print('[%d, %5d] loss: %.3f' % (epoch + 1, i + 1, running_loss / 100))  
                 running_loss = 0.0  
-        # 验证模型  
+        # eval  
         model.eval()  
         val_loss = 0.0  
         correct = 0
